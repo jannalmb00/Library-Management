@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author 2322746
  */
-public class Book {
+public abstract class Book {
     private String SN;
     private String title;
     private String author;
