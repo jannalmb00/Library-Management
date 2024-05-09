@@ -4,17 +4,25 @@
  */
 package Project;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 /**
  *
  * @author jannalomibao
  */
 public class MainForm extends javax.swing.JFrame {
 
+    private ResourceBundle bundle;
+    private ResourceBundle bundleFR;
     /**
      * Creates new form MainForm
      */
     public MainForm() {
         initComponents();
+        
+        //ResourceBundle.getBundle("Project/Bundle.properties");
+        //ResourceBundle.getBundle("Project/Bundle.properties", Locale.CANADA_FRENCH);
     }
 
     /**
@@ -26,21 +34,101 @@ public class MainForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        librarianButton = new javax.swing.JButton();
+        studentButton = new javax.swing.JButton();
+        engRadioButton = new javax.swing.JRadioButton();
+        frRadioButton = new javax.swing.JRadioButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        librarianButton.setText("Librarian");
+        librarianButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                librarianButtonActionPerformed(evt);
+            }
+        });
+
+        studentButton.setText("Student");
+        studentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentButtonActionPerformed(evt);
+            }
+        });
+
+        engRadioButton.setText("English");
+        engRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                engRadioButtonActionPerformed(evt);
+            }
+        });
+
+        frRadioButton.setText("French");
+        frRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                frRadioButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(engRadioButton)
+                            .addComponent(frRadioButton)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(librarianButton)
+                        .addGap(65, 65, 65)
+                        .addComponent(studentButton)))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(104, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(librarianButton)
+                    .addComponent(studentButton))
+                .addGap(18, 18, 18)
+                .addComponent(engRadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(frRadioButton)
+                .addGap(18, 18, 18))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void librarianButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_librarianButtonActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_librarianButtonActionPerformed
+
+    private void studentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentButtonActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_studentButtonActionPerformed
+
+    private void engRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engRadioButtonActionPerformed
+        // TODO add your handling code here:
+        /*librarianButton.setText(bundle.getString("MainForm.librarianButton.text"));
+        frRadioButton.setText(bundle.getString("MainForm.frRadioButton.text"));
+        engRadioButton.setText(bundle.getString("MainForm.engRadioButton.text"));
+        studentButton.setText(bundle.getString("MainForm.studentButton.text"));*/
+    }//GEN-LAST:event_engRadioButtonActionPerformed
+
+    private void frRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frRadioButtonActionPerformed
+        // TODO add your handling code here:
+        /*librarianButton.setText(bundleFR.getString("MainForm.librarianButton.text"));
+        frRadioButton.setText(bundleFR.getString("MainForm.frRadioButton.text"));
+        engRadioButton.setText(bundleFR.getString("MainForm.engRadioButton.text"));
+        studentButton.setText(bundleFR.getString("MainForm.studentButton.text"));*/
+    }//GEN-LAST:event_frRadioButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +166,9 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton engRadioButton;
+    private javax.swing.JRadioButton frRadioButton;
+    private javax.swing.JButton librarianButton;
+    private javax.swing.JButton studentButton;
     // End of variables declaration//GEN-END:variables
 }
