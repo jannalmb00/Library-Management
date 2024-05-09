@@ -11,9 +11,8 @@ import java.util.Date;
  * @author jannalomibao
  */
 public class FantasyBook extends Book{
-    
-    public FantasyBook(String SN, String title, String author, double price, int quantity, int issuedQuantity, Date dateofPurchase) {
-        super(SN, title, author, price, quantity, issuedQuantity, dateofPurchase);
-    }
-    
+
+    public FantasyBook(String SN, String title, String author, double price, int quantity, int issuedQuantity, Date dateofPurchase, String genre) {
+        super(SN, title, author, price, quantity, issuedQuantity, dateofPurchase, genre);
+    } 
 }

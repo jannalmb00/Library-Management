@@ -18,8 +18,9 @@ public abstract class Book {
     private int quantity;
     private int issuedQuantity;
     private Date dateofPurchase;
+    private String genre;
 
-    public Book(String SN, String title, String author, double price, int quantity, int issuedQuantity, Date dateofPurchase) {
+    public Book(String SN, String title, String author, double price, int quantity, int issuedQuantity, Date dateofPurchase, String genre) {
         this.SN = SN;
         this.title = title;
         this.author = author;
@@ -27,63 +28,75 @@ public abstract class Book {
         this.quantity = quantity;
         this.issuedQuantity = issuedQuantity;
         this.dateofPurchase = dateofPurchase;
+        this.genre = genre;
     }
 
     public String getSN() {
         return SN;
     }
 
-    public void setSN(String SN) {
-        this.SN = SN;
-    }
-
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public int getIssuedQuantity() {
         return issuedQuantity;
-    }
-
-    public void setIssuedQuantity(int issuedQuantity) {
-        this.issuedQuantity = issuedQuantity;
     }
 
     public Date getDateofPurchase() {
         return dateofPurchase;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setSN(String SN) {
+        this.SN = SN;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setIssuedQuantity(int issuedQuantity) {
+        this.issuedQuantity = issuedQuantity;
+    }
+
     public void setDateofPurchase(Date dateofPurchase) {
         this.dateofPurchase = dateofPurchase;
     }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+    
+
+   
     
     
     

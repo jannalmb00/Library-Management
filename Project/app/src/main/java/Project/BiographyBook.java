@@ -12,8 +12,10 @@ import java.util.Date;
  */
 public class BiographyBook extends Book{
     
-    public BiographyBook(String SN, String title, String author, double price, int quantity, int issuedQuantity, Date dateofPurchase) {
-        super(SN, title, author, price, quantity, issuedQuantity, dateofPurchase);
+    public BiographyBook(String SN, String title, String author, double price, int quantity, int issuedQuantity, Date dateofPurchase, String genre) {
+        super(SN, title, author, price, quantity, issuedQuantity, dateofPurchase, genre);
     }
+    
+  
     
 }
