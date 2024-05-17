@@ -11,8 +11,9 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
- *
+ * StudentFormView
  * @author janna
+ * @author raeeba
  */
 public class StudentFormView extends javax.swing.JFrame {
      private ResourceBundle bundle;
@@ -119,53 +120,43 @@ public class StudentFormView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(returnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(borrowBtnS, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(20, Short.MAX_VALUE)
+                        .addComponent(searchByTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(searchBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(viewCatalogBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(viewIssuedCatalogBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(searchByComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchByComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jScrollPane1)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(searchByTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(backButton)
-                                            .addGap(257, 257, 257)))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(englishRadioButton)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(frenchRadioButton))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(viewCatalogBtn)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(viewIssuedCatalogBtn))))))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                            .addComponent(englishRadioButton)
+                            .addComponent(frenchRadioButton))
+                        .addGap(8, 8, 8)))
+                .addGap(55, 55, 55))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(returnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(borrowBtnS, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(23, Short.MAX_VALUE)
-                        .addComponent(backButton)
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(englishRadioButton)
-                            .addComponent(frenchRadioButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(backButton)
+                    .addComponent(englishRadioButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(frenchRadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(searchByComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -177,14 +168,20 @@ public class StudentFormView extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(returnBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(borrowBtnS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(14, 14, 14))
+                    .addComponent(returnBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(borrowBtnS, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * <p>
+     * Displays Books catalog.
+     * </p>
+     * @param evt   view books catalog button clicked
+     */
     private void viewCatalogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewCatalogBtnActionPerformed
         // TODO add your handling code here:
         displayTextAreaS.setText("");
@@ -197,6 +194,12 @@ public class StudentFormView extends javax.swing.JFrame {
         displayTextAreaS.setText(mapAsString.toString());
     }//GEN-LAST:event_viewCatalogBtnActionPerformed
 
+    /**
+     * <p>
+     * Displays issuedBooks catalog.
+     * </p>
+     * @param evt   view issued books catalog button clicked
+     */
     private void viewIssuedCatalogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewIssuedCatalogBtnActionPerformed
         // TODO add your handling code here:
          displayTextAreaS.setText("");
@@ -213,6 +216,12 @@ public class StudentFormView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_viewIssuedCatalogBtnActionPerformed
 
+    /**
+     * <p>
+     * Goes to BorrowViewForm.
+     * </p>
+     * @param evt   back button clicked
+     */
     private void borrowBtnSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrowBtnSActionPerformed
         // TODO add your handling code here:
         BorrowViewBook borrowForm = new BorrowViewBook();
@@ -220,6 +229,12 @@ public class StudentFormView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_borrowBtnSActionPerformed
 
+    /**
+     * <p>
+     * Goes back to MainForm.
+     * </p>
+     * @param evt   back button clicked
+     */
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         MainForm mainForm = new MainForm();
@@ -227,6 +242,12 @@ public class StudentFormView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
+    /**
+     * <p>
+     * Goes to ReturnForm to Library.
+     * </p>
+     * @param evt   return button clicked
+     */
     private void returnBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnBtnActionPerformed
         // TODO add your handling code here:
         ReturnFormView returnForm = new ReturnFormView();
@@ -234,6 +255,12 @@ public class StudentFormView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_returnBtnActionPerformed
 
+    /**
+     * <p>
+     * Searches for books in the Library based on specified field and displays the result.
+     * </p>
+     * @param evt   return button clicked
+     */
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
          displayTextAreaS.setText("");
@@ -291,6 +318,12 @@ public class StudentFormView extends javax.swing.JFrame {
         searchByTextBox.setText("");
     }//GEN-LAST:event_searchBtnActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to English.
+     * </p>
+     * @param evt   english radio button clicked
+     */
     private void englishRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_englishRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(true);
@@ -305,6 +338,12 @@ public class StudentFormView extends javax.swing.JFrame {
         viewIssuedCatalogBtn.setText(bundle.getString("viewIssuedCatalogBtn.text"));
     }//GEN-LAST:event_englishRadioButtonActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to French.
+     * </p>
+     * @param evt   french radio button clicked
+     */
     private void frenchRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frenchRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(false);
@@ -320,6 +359,7 @@ public class StudentFormView extends javax.swing.JFrame {
     }//GEN-LAST:event_frenchRadioButtonActionPerformed
 
     /**
+     * Runs the Form
      * @param args the command line arguments
      */
     public static void main(String args[]) {

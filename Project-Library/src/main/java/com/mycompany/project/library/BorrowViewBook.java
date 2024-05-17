@@ -9,8 +9,9 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
- *
+ * BorrowViewBook Form
  * @author janna
+ * @author raeeba
  */
 public class BorrowViewBook extends javax.swing.JFrame {
      private ResourceBundle bundle;
@@ -134,20 +135,19 @@ public class BorrowViewBook extends javax.swing.JFrame {
                     .addComponent(backButton)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(snLabel)
-                            .addComponent(studentLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(snIssueBookTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(issueBookBtn))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(studentIDLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(studentIDTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(seachStudentBtn)))))
+                        .addComponent(snLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(studentLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(snIssueBookTextBox)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(issueBookBtn))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(studentIDLabel)
+                            .addGap(18, 18, 18)
+                            .addComponent(studentIDTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(seachStudentBtn))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -155,7 +155,7 @@ public class BorrowViewBook extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(viewIssueCatalogBtn))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(109, 109, 109))
+                .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(englishRadioButton)
@@ -203,6 +203,12 @@ public class BorrowViewBook extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     /**
+     * <p>
+     * Searches for Student whose information was entered.
+     * </p>
+     * @param evt   search student button clicked
+     */
     private void seachStudentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seachStudentBtnActionPerformed
         // TODO add your handling code here:
         int id = Integer.parseInt( studentIDTextBox.getText());
@@ -218,6 +224,12 @@ public class BorrowViewBook extends javax.swing.JFrame {
         
     }//GEN-LAST:event_seachStudentBtnActionPerformed
 
+    /**
+     * <p>
+     * Displays Book catalog.
+     * </p>
+     * @param evt   view catalog button clicked
+     */
     private void ViewCatalogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewCatalogBtnActionPerformed
         // TODO add your handling code here:
          displayTextArea.setText("");
@@ -234,6 +246,12 @@ public class BorrowViewBook extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ViewCatalogBtnActionPerformed
 
+    /**
+     * <p>
+     * Displays issuedBooks catalog.
+     * </p>
+     * @param evt   view issued books catalog button clicked
+     */
     private void viewIssueCatalogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewIssueCatalogBtnActionPerformed
         // TODO add your handling code here:
          displayTextArea.setText("");
@@ -251,7 +269,13 @@ public class BorrowViewBook extends javax.swing.JFrame {
        }
           
     }//GEN-LAST:event_viewIssueCatalogBtnActionPerformed
-
+    
+    /**
+     * <p>
+     * Issues Book to Student.
+     * </p>
+     * @param evt    issue book  button clicked
+     */
     private void issueBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issueBookBtnActionPerformed
         // TODO add your handling code here:
         issueStatusTextArea.setText("");
@@ -280,6 +304,12 @@ public class BorrowViewBook extends javax.swing.JFrame {
         studentInfoDisplayTextArea.setText("");
     }//GEN-LAST:event_issueBookBtnActionPerformed
 
+    /**
+     * <p>
+     * Goes back to MainForm.
+     * </p>
+     * @param evt   back button clicked
+     */
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         MainForm mainForm = new MainForm();
@@ -287,6 +317,12 @@ public class BorrowViewBook extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to English.
+     * </p>
+     * @param evt   english radio button clicked
+     */
     private void englishRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_englishRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(true);
@@ -303,6 +339,12 @@ public class BorrowViewBook extends javax.swing.JFrame {
         viewIssueCatalogBtn.setText(bundle.getString("viewIssuedCatalogBtn.text"));
     }//GEN-LAST:event_englishRadioButtonActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to French.
+     * </p>
+     * @param evt   french radio button clicked
+     */
     private void frenchRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frenchRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(false);
@@ -320,6 +362,7 @@ public class BorrowViewBook extends javax.swing.JFrame {
     }//GEN-LAST:event_frenchRadioButtonActionPerformed
 
     /**
+     * Runs the Form
      * @param args the command line arguments
      */
     public static void main(String args[]) {

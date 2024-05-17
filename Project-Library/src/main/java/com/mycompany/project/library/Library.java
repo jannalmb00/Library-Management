@@ -18,13 +18,19 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- *
+ * <p> 
+ * Library class handles database queries, and acts as the controller class that handles communication between the model and the view.
+ * </p>
  * @author janna
+ * @author raeeba
  */
 public class Library {
     Connection con = null;
     int counter  =  (int) (Math.random() * (200 - 50 + 1)) + 50;
 
+    /**
+     * Default constructor
+     */
     public Library() {
         try {
             // Establish database connection
@@ -35,6 +41,13 @@ public class Library {
         }
         
     }
+    
+    /**
+     * <p>
+     * Method to add a book to the Library.
+     * </p>
+     * @param book      book to be added
+     */
     public void addBook(Book book) {
         //add a new book to the db
         // set the issued to 0
@@ -65,6 +78,15 @@ public class Library {
 
         
     }
+    
+    /**
+     * <p>
+     * Method to issue a book from the Library.
+     * </p>
+     * @param book      book to be issued
+     * @param student   student to whom the book will be issued
+     * @return true     if book can be issued
+     */
     public boolean issuedBook(Book book, Student student){
         System.out.println(book.printBook());
         System.out.println(student.printStudent());
@@ -127,6 +149,15 @@ public class Library {
             //A new entry in “IssuedBooks” table is added
         
     }
+    
+    /**
+     * <p>
+     * Method to return a book to the Library.
+     * </p>
+     * @param book      book to be returned
+     * @param student   student who is returning the book
+     * @return true     if book can be returned
+     */
     public boolean returnBook(Book book, Student student) {
         String checkIssuedSql = "SELECT * FROM IssuedBooks WHERE SN = ? AND StID = ?";
         String getBookDetailsSql = "SELECT Quantity, Issued FROM Books WHERE SN = ?";
@@ -173,6 +204,12 @@ public class Library {
         return false;
     }
 
+    /**
+     * <p>
+     * Method to display the Book catalog.
+     * </p>
+     * @return Map  book catalog
+     */
     public Map<String,String> viewCatalog(){
         //sorted by sn
         //return map
@@ -206,6 +243,13 @@ public class Library {
         return catalog;
         
     }
+    
+    /**
+     * <p>
+     * Method to display the issued Books catalog.
+     * </p>
+     * @return Map  issued book catalog
+     */
     public Map<String,String> viewIssuedBooks(){
         Map<String, String> catalog = new TreeMap<>();
          String sql = "SELECT * FROM IssuedBooks ORDER BY SN";
@@ -238,7 +282,14 @@ public class Library {
         }
         return catalog;  
     }
-    //search book 
+    
+    /**
+     * <p>
+     * Method to search Books in the Library by title.
+     * </p>
+     * @param title      title of the book being searched
+     * @return Book      book details
+     */
     public List<Book> searchBookByTitle(String title){
         List<Book> seachedBook = new ArrayList<>();
         String query = "SELECT * FROM Books WHERE Title = ?";
@@ -269,6 +320,14 @@ public class Library {
         }
         return seachedBook;
     }
+    
+    /**
+     * <p>
+     * Method to search Books in the Library by author.
+     * </p>
+     * @param author      author of the book being searched
+     * @return Book       book details
+     */
     public List<Book> searchBookByAuthor(String author){
         List<Book> seachedBook = new ArrayList<>();
         String query = "SELECT * FROM Books WHERE Author = ?";
@@ -299,6 +358,14 @@ public class Library {
         }
         return seachedBook;
     }
+    
+    /**
+     * <p>
+     * Method to search Books in the Library by publisher.
+     * </p>
+     * @param publisher      publisher of the book being searched
+     * @return Book          book details
+     */
     public List<Book> searchBookByPublisher(String publisher){
         List<Book> seachedBook = new ArrayList<>();
         String query = "SELECT * FROM Books WHERE Publisher = ?";
@@ -332,7 +399,13 @@ public class Library {
             
     
     //additional method for verification
-    //verify the student 
+    /**
+     * <p>
+     * Method to verify the student.
+     * </p>
+     * @param stID         student id
+     * @return Student     student details
+     */
     public Student getStudent(int stID){
         String sql = "Select * From Students Where StudentID = ? ";
         Student student = null;
@@ -356,6 +429,14 @@ public class Library {
         }
          return student;
     }
+    
+    /**
+     * <p>
+     * Method to get a Book based on its serial number.
+     * </p>
+     * @param snEntered         book serial number
+     * @return Book             book details
+     */
 public Book getBook(String snEntered) {
     System.out.println("getbook");
     String sql = "SELECT * FROM Books WHERE SN = ?";
@@ -390,6 +471,13 @@ public Book getBook(String snEntered) {
     return null;
 }
 
+    /**
+     * <p>
+     * Method to convert String to date format.
+     * </p>
+     * @param date         string to be converted
+     * @return Date        date
+     */
 public Date convertStringToDate(String date){
     if (date == null) {
         return null; // Return null if the date string is null

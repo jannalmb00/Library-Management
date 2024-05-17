@@ -8,8 +8,9 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- *
+ *MainForm
  * @author janna
+ * @author raeeba
  */
 public class MainForm extends javax.swing.JFrame {
     private ResourceBundle bundle;
@@ -38,6 +39,7 @@ public class MainForm extends javax.swing.JFrame {
         toLibBtn = new javax.swing.JButton();
         englishRadioButton = new javax.swing.JRadioButton();
         frenchRadioButton = new javax.swing.JRadioButton();
+        chooseLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,36 +71,46 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
+        chooseLabel.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        chooseLabel.setText("I am a ...");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(toStudentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(toLibBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(englishRadioButton)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(frenchRadioButton)
+                        .addGap(55, 55, 55)
+                        .addComponent(chooseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(toStudentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(88, 88, 88)
-                        .addComponent(toLibBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addComponent(chooseLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(englishRadioButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(frenchRadioButton)))
-                .addContainerGap(130, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(toStudentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toLibBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(englishRadioButton)
-                    .addComponent(frenchRadioButton))
-                .addContainerGap())
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -118,6 +130,12 @@ public class MainForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_toLibBtnActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to English.
+     * </p>
+     * @param evt   english radio button clicked
+     */
     private void englishRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_englishRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(true);
@@ -126,8 +144,15 @@ public class MainForm extends javax.swing.JFrame {
         englishRadioButton.setText(bundle.getString("engRadioButton.text"));
         frenchRadioButton.setText(bundle.getString("frenchRadioButton.text"));
         toLibBtn.setText(bundle.getString("toLibBtn.text"));
+        chooseLabel.setText(bundle.getString("chooseLabel.text"));
     }//GEN-LAST:event_englishRadioButtonActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to French.
+     * </p>
+     * @param evt   french radio button clicked
+     */
     private void frenchRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frenchRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(false);
@@ -136,9 +161,11 @@ public class MainForm extends javax.swing.JFrame {
         frenchRadioButton.setText(bundleFR.getString("frenchRadioButton.text"));
         toLibBtn.setText(bundleFR.getString("toLibBtn.text"));
         toStudentBtn.setText(bundleFR.getString("toStudentBtn.text"));
+        chooseLabel.setText(bundleFR.getString("chooseLabel.text"));
     }//GEN-LAST:event_frenchRadioButtonActionPerformed
 
     /**
+     * Runs the Form
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -174,6 +201,7 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel chooseLabel;
     private javax.swing.JRadioButton englishRadioButton;
     private javax.swing.JRadioButton frenchRadioButton;
     private javax.swing.JButton toLibBtn;

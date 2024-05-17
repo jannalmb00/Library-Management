@@ -9,8 +9,10 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- *
+ *Add Book Form
+ * 
  * @author janna
+ * @author raeeba
  */
 public class AddBookFormView extends javax.swing.JFrame {
     private ResourceBundle bundle;
@@ -210,7 +212,13 @@ public class AddBookFormView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * <p>
+     * Adds Book to Library.
+     * </p>
+     * @param evt   add button clicked
+     */
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
      if(newSNTextBox.getText().isEmpty() || newTitleTextBox.getText().isEmpty() ||
@@ -247,6 +255,12 @@ public class AddBookFormView extends javax.swing.JFrame {
         
     }//GEN-LAST:event_addBtnActionPerformed
 
+    /**
+     * <p>
+     * Goes back to MainForm.
+     * </p>
+     * @param evt   back button clicked
+     */
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
        LibFormView libForm = new LibFormView();
@@ -254,6 +268,12 @@ public class AddBookFormView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to English.
+     * </p>
+     * @param evt   english radio button clicked
+     */
     private void englishRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_englishRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(true);
@@ -270,6 +290,12 @@ public class AddBookFormView extends javax.swing.JFrame {
         addBtn.setText(bundle.getString("addBtn.text"));
     }//GEN-LAST:event_englishRadioButtonActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to French.
+     * </p>
+     * @param evt   french radio button clicked
+     */
     private void frenchRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frenchRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(false);
@@ -286,6 +312,11 @@ public class AddBookFormView extends javax.swing.JFrame {
         addBtn.setText(bundleFR.getString("addBtn.text"));
     }//GEN-LAST:event_frenchRadioButtonActionPerformed
     
+     /**
+     * <p>
+     * Clears Text Boxes.
+     * </p>
+     */
     private void clearTextBox(){
          newSNTextBox.setText("");
          newTitleTextBox.setText("");
@@ -296,6 +327,7 @@ public class AddBookFormView extends javax.swing.JFrame {
 
     }
     /**
+     * Runs the Form
      * @param args the command line arguments
      */
     public static void main(String args[]) {

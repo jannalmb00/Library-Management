@@ -9,8 +9,9 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
- *
+ * LibFormView
  * @author janna
+ * @author raeeba
  */
 public class LibFormView extends javax.swing.JFrame {
     private ResourceBundle bundle;
@@ -113,28 +114,26 @@ public class LibFormView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(englishRadioButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(frenchRadioButton))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(addBookBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(backButton)
+                            .addGap(73, 73, 73))
+                        .addComponent(returnBookBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(issuedBookBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(addBookBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(backButton)
-                                .addGap(73, 73, 73))
-                            .addComponent(returnBookBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(issuedBookBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(catalogcomboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(displayButton))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(englishRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(frenchRadioButton)))
+                        .addComponent(catalogcomboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(displayButton))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -169,6 +168,12 @@ public class LibFormView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * <p>
+     * Displays BorrowViewBook Form.
+     * </p>
+     * @param evt    issued books button clicked
+     */
     private void issuedBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issuedBookBtnActionPerformed
         // TODO add your handling code here:
         BorrowViewBook borrowForm = new BorrowViewBook();
@@ -176,6 +181,12 @@ public class LibFormView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_issuedBookBtnActionPerformed
 
+    /**
+     * <p>
+     * Displays AddBookFormView.
+     * </p>
+     * @param evt    add book button clicked
+     */
     private void addBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookBtnActionPerformed
         // TODO add your handling code here:
        AddBookFormView addBookForm = new AddBookFormView();
@@ -183,6 +194,12 @@ public class LibFormView extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_addBookBtnActionPerformed
 
+    /**
+     * <p>
+     * Goes back to MainForm.
+     * </p>
+     * @param evt    back book button clicked
+     */
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         MainForm mainForm = new MainForm();
@@ -190,6 +207,12 @@ public class LibFormView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
+    /**
+     * <p>
+     * Displays ReturnFormView.
+     * </p>
+     * @param evt    return book button clicked
+     */
     private void returnBookBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnBookBtnActionPerformed
         // TODO add your handling code here:
         ReturnFormView returnForm = new ReturnFormView();
@@ -201,7 +224,13 @@ public class LibFormView extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_catalogcomboBoxActionPerformed
-
+    
+    /**
+     * <p>
+     * Displays catalogs.
+     * </p>
+     * @param evt    display button clicked
+     */
     private void displayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayButtonActionPerformed
         // TODO add your handling code here:
         String catalog = catalogcomboBox.getSelectedItem().toString();
@@ -243,6 +272,12 @@ public class LibFormView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_displayButtonActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to English.
+     * </p>
+     * @param evt   english radio button clicked
+     */
     private void englishRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_englishRadioButtonActionPerformed
         // TODO add your handling code here:
         englishRadioButton.setSelected(true);
@@ -256,6 +291,12 @@ public class LibFormView extends javax.swing.JFrame {
         returnBookBtn.setText(bundle.getString("returnBookBtn.text"));
     }//GEN-LAST:event_englishRadioButtonActionPerformed
 
+    /**
+     * <p>
+     * Changes Form Language to French.
+     * </p>
+     * @param evt   french radio button clicked
+     */
     private void frenchRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frenchRadioButtonActionPerformed
         // TODO add your handling code here:
          englishRadioButton.setSelected(false);
@@ -270,6 +311,7 @@ public class LibFormView extends javax.swing.JFrame {
     }//GEN-LAST:event_frenchRadioButtonActionPerformed
 
     /**
+     * Runs the Form
      * @param args the command line arguments
      */
     public static void main(String args[]) {
